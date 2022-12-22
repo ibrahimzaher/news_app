@@ -3,7 +3,9 @@ import 'package:news_app/models/category/category.dart';
 import 'package:news_app/modules/categories/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({Key? key}) : super(key: key);
+  const CategoriesScreen({Key? key, required this.onCategoryTab})
+      : super(key: key);
+  final Function onCategoryTab;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +40,9 @@ class CategoriesScreen extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    onCategoryTab(Category.categories[index]);
+                  },
                   child: CategoryItem(
                       category: Category.categories[index], index: index),
                 );
