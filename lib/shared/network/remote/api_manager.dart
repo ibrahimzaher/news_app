@@ -12,7 +12,7 @@ class ApiManager {
       baseUrl,
       'v2/top-headlines/sources',
       {
-        'apiKey': '2396ee10fa6c4da988e49e5b30527c58',
+        'apiKey': '742a52ef883449b2ae1a324cb8681b1a',
         'category': categoryId,
       },
     );
@@ -34,10 +34,31 @@ class ApiManager {
       baseUrl,
       '/v2/everything',
       {
-        'apiKey': '2396ee10fa6c4da988e49e5b30527c58',
+        'apiKey': '742a52ef883449b2ae1a324cb8681b1a',
         'sources': sourceId,
         'pageSize': limit,
         'page': pageNumber.toString(),
+      },
+    );
+    try {
+      var response = await http.get(url);
+      var stringBody = response.body;
+      var json = jsonDecode(stringBody);
+      NewsResponse newsResponse = NewsResponse.fromJson(json);
+      return newsResponse;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<NewsResponse> search(String searchName) async {
+    const String limit = '10';
+    var url = Uri.https(
+      baseUrl,
+      '/v2/everything',
+      {
+        'apiKey': '742a52ef883449b2ae1a324cb8681b1a',
+        'q': searchName,
       },
     );
     try {
