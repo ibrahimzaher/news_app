@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/news_response/NewsResponse.dart';
 import 'package:news_app/models/sources_response/SourcesResponse.dart';
+import 'package:news_app/modules/categories/details/news/news_details.dart';
 import 'package:news_app/modules/categories/details/news/news_item.dart';
 import 'package:news_app/shared/network/remote/api_manager.dart';
 import 'package:news_app/shared/style/my_color.dart';
@@ -52,8 +53,12 @@ class NewsContainer extends StatelessWidget {
         }
         var response = snapshot.data?.articles ?? [];
         return ListView.builder(
-          itemBuilder: (context, index) =>
-              InkWell(onTap: () {}, child: NewsItem(news: response[index])),
+          itemBuilder: (context, index) => InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, NewsDetails.routeName,
+                    arguments: response[index]);
+              },
+              child: NewsItem(news: response[index])),
           itemCount: response.length,
         );
       },

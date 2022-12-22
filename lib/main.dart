@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/layout/home/home_layout.dart';
+import 'package:news_app/modules/categories/details/news/news_details.dart';
+import 'package:news_app/modules/web_view/web_view_screen.dart';
 import 'package:news_app/shared/style/my_theme.dart';
 
 void main() {
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeLayout.routeName,
       routes: {
         HomeLayout.routeName: (_) => HomeLayout(),
+        NewsDetails.routeName: (_) => NewsDetails(),
+        WebViewScreen.routeName: (_) => WebViewScreen(),
       },
     );
   }
