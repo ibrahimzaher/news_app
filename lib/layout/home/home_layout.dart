@@ -3,6 +3,7 @@ import 'package:news_app/layout/home/drawer_content.dart';
 import 'package:news_app/models/category/category.dart';
 import 'package:news_app/modules/categories/categories_screen.dart';
 import 'package:news_app/modules/categories/details/category_details.dart';
+import 'package:news_app/modules/search/search_screen.dart';
 import 'package:news_app/modules/settings/settings_screen.dart';
 import 'package:news_app/shared/style/my_color.dart';
 
@@ -47,7 +48,12 @@ class _HomeLayoutState extends State<HomeLayout> {
                           elevation: 0,
                           shape: const CircleBorder(),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            SearchScreen.routeName,
+                          );
+                        },
                         child: const Icon(
                           Icons.search,
                           size: 30,
