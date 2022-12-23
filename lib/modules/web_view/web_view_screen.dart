@@ -4,7 +4,7 @@ import 'package:news_app/shared/style/my_color.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewScreen extends StatelessWidget {
-  WebViewScreen({Key? key}) : super(key: key);
+  const WebViewScreen({Key? key}) : super(key: key);
   static const String routeName = 'WebView';
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,20 @@ class WebViewScreen extends StatelessWidget {
       )
       ..loadRequest(Uri.parse(news.url ?? ""));
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: MyColor.whiteColor,
-        body: WebViewWidget(
-          controller: controller,
+      child: Container(
+        decoration: const BoxDecoration(
+          color: MyColor.whiteColor,
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/pattern.png',
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Scaffold(
+          body: WebViewWidget(
+            controller: controller,
+          ),
         ),
       ),
     );
