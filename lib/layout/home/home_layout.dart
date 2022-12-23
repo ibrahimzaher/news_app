@@ -6,6 +6,7 @@ import 'package:news_app/modules/categories/details/category_details.dart';
 import 'package:news_app/modules/search/search_screen.dart';
 import 'package:news_app/modules/settings/settings_screen.dart';
 import 'package:news_app/shared/style/my_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         appBar: AppBar(
           title: Text(
             selectedCategory == null
-                ? 'News App'
+                ? AppLocalizations.of(context)!.newsapp
                 : selectedCategory?.title ?? "",
           ),
           actions: selectedCategory == null
@@ -67,7 +68,7 @@ class _HomeLayoutState extends State<HomeLayout> {
           ),
         ),
         body: HomeLayout.currentIndex == 2
-            ? SettingsScreen()
+            ? const SettingsScreen()
             : selectedCategory == null
                 ? CategoriesScreen(
                     onCategoryTab: oClickCategory,

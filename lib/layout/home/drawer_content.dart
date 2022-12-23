@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/shared/style/my_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DrawerContent extends StatelessWidget {
   const DrawerContent({Key? key, required this.clickDrawerItem})
@@ -18,7 +19,7 @@ class DrawerContent extends StatelessWidget {
               top: 35,
             ),
             child: Text(
-              'News App!',
+              AppLocalizations.of(context)!.newsappl,
               style: Theme.of(context).textTheme.headline1,
               textAlign: TextAlign.center,
             ),
@@ -36,7 +37,7 @@ class DrawerContent extends StatelessWidget {
               size: 30,
             ),
             title: Text(
-              'Categories',
+              AppLocalizations.of(context)!.categories,
               style: Theme.of(context).textTheme.headline2,
             ),
           ),
@@ -53,7 +54,7 @@ class DrawerContent extends StatelessWidget {
               size: 30,
             ),
             title: Text(
-              'Settings',
+              AppLocalizations.of(context)!.settings,
               style: Theme.of(context).textTheme.headline2,
             ),
           ),
