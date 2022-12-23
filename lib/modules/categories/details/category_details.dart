@@ -24,10 +24,10 @@ class CategoryDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(child: Text('We Have something Wrong')),
+             const Center(child: Text('We Have something Wrong')),
               ElevatedButton(
                 onPressed: () {},
-                child: Text(
+                child:const Text(
                   'Try Again',
                 ),
               ),
@@ -42,7 +42,7 @@ class CategoryDetails extends StatelessWidget {
               Center(child: Text(snapshot.data?.message ?? '')),
               ElevatedButton(
                 onPressed: () {},
-                child: Text(
+                child:const Text(
                   'Try Again',
                 ),
               ),

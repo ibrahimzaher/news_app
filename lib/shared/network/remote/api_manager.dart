@@ -6,13 +6,13 @@ import 'package:news_app/models/sources_response/SourcesResponse.dart';
 
 class ApiManager {
   static const String baseUrl = 'newsapi.org';
-  //https://newsapi.org/v2/top-headlines/sources?apiKey=1a627e9c50be47bfa1c5c86f9a80f9af&category=sports
+  static const String apiKey = '1a627e9c50be47bfa1c5c86f9a80f9af';
   static Future<SourcesResponse> getSources(String categoryId) async {
     var url = Uri.https(
       baseUrl,
       'v2/top-headlines/sources',
       {
-        'apiKey': '742a52ef883449b2ae1a324cb8681b1a',
+        'apiKey': apiKey,
         'category': categoryId,
       },
     );
@@ -27,14 +27,13 @@ class ApiManager {
     }
   }
 
-  //https://newsapi.org/v2/everything?sources=abc-news&apiKey=2396ee10fa6c4da988e49e5b30527c58&page=1&pageSize=10
   static Future<NewsResponse> getNews(String sourceId, int pageNumber) async {
     const String limit = '10';
     var url = Uri.https(
       baseUrl,
       '/v2/everything',
       {
-        'apiKey': '742a52ef883449b2ae1a324cb8681b1a',
+        'apiKey': apiKey,
         'sources': sourceId,
         'pageSize': limit,
         'page': pageNumber.toString(),
@@ -52,12 +51,11 @@ class ApiManager {
   }
 
   static Future<NewsResponse> search(String searchName) async {
-    const String limit = '10';
     var url = Uri.https(
       baseUrl,
       '/v2/everything',
       {
-        'apiKey': '742a52ef883449b2ae1a324cb8681b1a',
+        'apiKey': apiKey,
         'q': searchName,
       },
     );
