@@ -4,6 +4,7 @@ import 'package:news_app/modules/categories/details/news/news_details.dart';
 import 'package:news_app/modules/categories/details/news/news_item.dart';
 import 'package:news_app/shared/network/remote/api_manager.dart';
 import 'package:news_app/shared/style/my_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Search'),
+          title: Text(AppLocalizations.of(context)!.search),
         ),
         body: Column(
           children: [
@@ -40,7 +41,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               child: TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Searching ...',
+                  hintText: AppLocalizations.of(context)!.searching,
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
                       15,

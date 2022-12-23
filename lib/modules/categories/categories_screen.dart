@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/category/category.dart';
 import 'package:news_app/modules/categories/category_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key, required this.onCategoryTab})
@@ -18,7 +19,7 @@ class CategoriesScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Pick your category\nof interest',
+            AppLocalizations.of(context)!.pickyourcategoryofinterest,
             style: Theme.of(context).textTheme.headline2!.copyWith(
                   color: const Color(0xff4F5A69),
                 ),

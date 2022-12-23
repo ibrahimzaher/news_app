@@ -6,7 +6,7 @@ import 'package:news_app/models/sources_response/SourcesResponse.dart';
 
 class ApiManager {
   static const String baseUrl = 'newsapi.org';
-  static const String apiKey = '1a627e9c50be47bfa1c5c86f9a80f9af';
+  static const String apiKey = '49f30859c7aa4f65aa946d6b2ed7bd48';
   static Future<SourcesResponse> getSources(String categoryId) async {
     var url = Uri.https(
       baseUrl,
